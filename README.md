@@ -2,7 +2,13 @@
 
 ## Pre requirement
 
-gcloud must be installed on the machine to execute this script
+1. gcloud must be installed on the machine to execute this script
+
+2. "jq" is installed
+
+3. create service account and update sa.json with correct parameters 
+
+4. backet name is configured in "config"
 
 ## script procedure
 
