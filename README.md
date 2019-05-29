@@ -11,7 +11,7 @@ https://cloud.google.com/storage/docs/listing-objects?hl=ja
 2. iteration
 
   a. read local file from 1st raw, and substitute into following json
-  
+  <pre>
   {
       "config": {
           "encoding":"ENCODING_UNSPECIFIED",
@@ -21,7 +21,7 @@ https://cloud.google.com/storage/docs/listing-objects?hl=ja
           "uri":"gs://<$path>/<$object_name>”
       } 
   }
-  
+  </pre>
   b. Call speech to text api using created json
   $ curl -s -H "Content-Type: application/json" -H "Authorization: Bearer "$(gcloud auth application-default print-access-token) https://speech.googleapis.com/v1/speech:longrunningrecognize  -d @<$json>
   
