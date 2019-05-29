@@ -1,3 +1,1 @@
-gcs_path=
-api_key=
-workdir=
+bucket=<bucket name>
