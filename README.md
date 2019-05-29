@@ -1,6 +1,6 @@
 # Google Speech to text API test script
 
-## Pre requirement
+## Pre requirements
 
 1. gcloud must be installed on the machine to execute this script
 
