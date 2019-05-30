@@ -1,5 +1,6 @@
 #!/bin/sh
-.config
+bucket="<YOUR BUCKET NAME>"
+
 export GOOGLE_APPLICATION_CREDENTIALS="sa.json"
 
 curl -s -H "Content-Type: application/json" -H "Authorization: Bearer "$(gcloud auth application-default print-access-token) "https://www.googleapis.com/storage/v1/b/$bucket/o" | jq -r ".items[] | .name" > objects.out
