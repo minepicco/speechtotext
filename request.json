@@ -1,9 +1,0 @@
-{
-  "config": {
-      "encoding":"ENCODING_UNSPECIFIED",
-      "languageCode": "ja-JP",
-  },
-  "audio": {
-      "uri":"gs://"$path
-  }
-}
