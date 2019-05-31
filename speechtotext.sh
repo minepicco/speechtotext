@@ -31,7 +31,7 @@ do
     do
         curl -X PATCH -H "Authorization: Bearer "$(gcloud auth application-default print-access-token) -H "Content-Type: application/json" "https://www.googleapis.com/storage/v1/b/"$bucket"/o/"$obj -d '{"metadata": {"'$i'": "'$line'"}}'
         i=$((i+1))
-        echo $i" : "$line > $obj"_.txt"
+        echo $i" : "$line >> $obj"_.txt"
     done < text.txt
     r=$((r+1))
 done < $joblist
