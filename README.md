@@ -14,7 +14,7 @@
 2. add execute permission to speechtotext.sh
 
 3. execute with parameter(s)
-<pre>$ ./speechtotext.sh <YOUR BUCKET NAME> <[Optional] Interval from job request until to get results> </pre>
+<pre>$ ./speechtotext.sh [YOUR BUCKET NAME] [[Optional] Interval from job request until results request] </pre>
 
 ## script procedure
 
