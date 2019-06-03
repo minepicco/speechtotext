@@ -1,6 +1,13 @@
 #!/bin/sh
-bucket="<YOUR BUCKET NAME>"
-interval=30
+if [$1 == "" ] then 
+    echo "Please specify your bucket name"
+    exit
+else 
+    bucket=$1
+fi
+if [ $2 == "" ] then
+   interval=30
+fi
 
 export GOOGLE_APPLICATION_CREDENTIALS="sa.json"
 joblist=`date +%s`_jobs.txt
