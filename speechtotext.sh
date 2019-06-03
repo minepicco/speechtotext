@@ -1,12 +1,14 @@
 #!/bin/sh
-if [$1 == "" ] then 
+if [ "$1" == "" ]; then 
     echo "Please specify your bucket name"
     exit
 else 
     bucket=$1
 fi
-if [ $2 == "" ] then
+if [ "$2" == "" ]; then
    interval=30
+else
+   interval=$2
 fi
 
 export GOOGLE_APPLICATION_CREDENTIALS="sa.json"
