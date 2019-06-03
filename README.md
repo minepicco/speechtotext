@@ -8,7 +8,13 @@
 
 3. create service account and update sa.json with the credential. 
 
-4. backet name is configured in "config"
+## Usage
+1. clone script to your machine.
+
+2. add execute permission to speechtotext.sh
+
+3. execute with parameter(s)
+<pre>$ ./speechtotext.sh <YOUR BUCKET NAME> <[Optional] Interval from job request until to get results> </pre>
 
 ## script procedure
 
