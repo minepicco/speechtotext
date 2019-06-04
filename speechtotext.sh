@@ -36,7 +36,7 @@ do
     obj=`sed -n $r"P" objects.out`
     curl -H "Authorization: Bearer "$(gcloud auth application-default print-access-token) -H "Content-Type: application/json; charset=utf-8" "https://speech.googleapis.com/v1/operations/"$line | jq -r ".response.results[] | .alternatives[] | .transcript" > $obj"_.txt"
     cnt=`cat $obj"_.txt" | grep -c ""`
-    if [ "$cnt" !="" ]; then
+    if [ "$cnt" -gt 1 ]; then
     curl -X PATCH -H "Authorization: Bearer "$(gcloud auth application-default print-access-token) -H "Content-Type: application/json" "https://www.googleapis.com/storage/v1/b/"$bucket"/o/"$obj -d '{"metadata": {"text": "Text was exported to '$obj'_.txt"}}'
     fi
     r=$((r+1))
