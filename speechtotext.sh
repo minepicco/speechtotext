@@ -43,7 +43,8 @@ do
             curl -X PATCH -H "Authorization: Bearer "$(gcloud auth application-default print-access-token) -H "Content-Type: application/json" "https://www.googleapis.com/storage/v1/b/"$bucket"/o/"$obj -d '{"metadata": {"text": "Text was exported to '$obj'_.txt"}}'
             n=1$((n+1))
         elif [ $line = "null" ]; then
-            echo "The file "$line" is not supported file format. skipping..."
+            echo "The file "$obj" is not supported file format. skipping..."
+            #echo $obj" : "`date` >> SKIPPED_FILES
             n=1$((n+1))
         else
             echo 'The job is not completed sleep another  '$interval' sec until'
