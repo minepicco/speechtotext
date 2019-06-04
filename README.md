@@ -15,8 +15,8 @@
 <pre>$ chmod +x speechtotext.sh</pre>
 3. execute with parameter(s)
 <pre>$ ./speechtotext.sh [YOUR BUCKET NAME] [[Optional] Interval from job request until results request] </pre>
-e.g.
-<pre>$ ./speechtotext.sh my_bucket 10</pre>
+  e.g.
+  <pre>$ ./speechtotext.sh my_bucket 10</pre>
 
 ## script description
 
