@@ -38,10 +38,10 @@ https://cloud.google.com/storage/docs/listing-objects?hl=ja
   b. Call speech to text api using created json
   <pre>$ curl -s -H "Content-Type: application/json" -H "Authorization: Bearer "$(gcloud auth application-default print-access-token) https://speech.googleapis.com/v1/speech:longrunningrecognize  -d @$json</pre>
   
-  c. Wait for 30 sec
+  c. Wait for N sec (default is 60)
   
   d. get jobID from b. and call the result
-  <pre>$ curl -H "Authorization: Bearer "$(gcloud auth application-default print-access-token) -H "Content-Type: application/json; charset=utf-8" "https://speech.googleapis.com/v1/operations/“&$jobID </pre>
+  <pre>$ curl -H "Authorization: Bearer "$(gcloud auth application-default print-access-token) -H "Content-Type: application/json; charset=utf-8" "https://speech.googleapis.com/v1/operations/“$jobID </pre>
   
   e. Write the values of Transcript to text and update metadata of the object
 
