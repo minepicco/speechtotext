@@ -10,11 +10,13 @@
 
 ## Usage
 1. clone script to your machine.
-
-2. add execute permission to speechtotext.sh
-
+<pre>$ git clone https://github.com/minepicco/speechtotext.git </pre>
+2. cd to the directory and add execute permission to speechtotext.sh
+<pre>$ chmod +x speechtotext.sh</pre>
 3. execute with parameter(s)
 <pre>$ ./speechtotext.sh [YOUR BUCKET NAME] [[Optional] Interval from job request until results request] </pre>
+e.g.
+<pre>$ ./speechtotext.sh my_bucket 10</pre>
 
 ## script procedure
 
