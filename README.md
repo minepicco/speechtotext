@@ -26,8 +26,7 @@ https://cloud.google.com/storage/docs/listing-objects?hl=ja
 2. iteration
 
   a. read local file from 1st raw, and substitute into following json
-  <pre>
-  {
+  <pre>{
       "config": {
           "encoding":"ENCODING_UNSPECIFIED",
           "languageCode": "ja-JP",
@@ -35,19 +34,14 @@ https://cloud.google.com/storage/docs/listing-objects?hl=ja
       "audio": {
           "uri":"gs://<$path>/<$object_name>”
       } 
-  }
-  </pre>
+  }</pre>
   b. Call speech to text api using created json
-  <pre>
-  $ curl -s -H "Content-Type: application/json" -H "Authorization: Bearer "$(gcloud auth application-default print-access-token) https://speech.googleapis.com/v1/speech:longrunningrecognize  -d @<$json>
-  </pre>
+  <pre>$ curl -s -H "Content-Type: application/json" -H "Authorization: Bearer "$(gcloud auth application-default print-access-token) https://speech.googleapis.com/v1/speech:longrunningrecognize  -d @$json</pre>
   
   c. Wait for 30 sec
   
   d. get jobID from b. and call the result
-  <pre>
-  $ curl -H "Authorization: Bearer "$(gcloud auth application-default print-access-token) -H "Content-Type: application/json; charset=utf-8" "https://speech.googleapis.com/v1/operations/“&<$jobID> | python -m json.tool
-  </pre>
+  <pre>$ curl -H "Authorization: Bearer "$(gcloud auth application-default print-access-token) -H "Content-Type: application/json; charset=utf-8" "https://speech.googleapis.com/v1/operations/“&$jobID </pre>
   
   e. Write the values of Transcript to text and update metadata of the object
 
