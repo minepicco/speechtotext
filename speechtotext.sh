@@ -47,7 +47,7 @@ do
             #echo $obj" : "`date` >> SKIPPED_FILES
             n=1$((n+1))
         else
-            echo 'The job is not completed sleep another  '$interval' sec until'
+            echo 'The job is not completed sleep another  '$interval' sec...'
             sleep $interval
         fi
     done
