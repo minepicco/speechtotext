@@ -35,7 +35,7 @@ while read line
 do
     obj=`sed -n $r"P" objects.out`
     declare -i n=0
-    until [ "$n" -gt 1 ]
+    until [ "$n" -ge 1 ]
     do
         curl -H "Authorization: Bearer "$(gcloud auth application-default print-access-token) -H "Content-Type: application/json; charset=utf-8" "https://speech.googleapis.com/v1/operations/"$line | jq -r ".response.results[] | .alternatives[] | .transcript" > $obj"_.txt"
         cnt=`cat $obj"_.txt" | grep -c ""`
